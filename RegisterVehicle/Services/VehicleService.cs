@@ -11,12 +11,13 @@ namespace RegisterVehicle.Services {
 
         MyDBContext MyDb = new MyDBContext();
 
-        public void NewVehicle(string model, string brand, string year, EnumType? type) {
+        public void NewVehicle(string model, string brand, string year, EnumType? type, Cor? cor) {
             Vehicle vehicle = new Vehicle();
             vehicle.model = model;
             vehicle.brand = brand;
             vehicle.year = year;
             vehicle.type = type;
+            vehicle.cor = cor;
             MyDb.Vehicle.Add(vehicle);
             //Roda o SQL no banco
             MyDb.SaveChanges();
@@ -35,7 +36,12 @@ namespace RegisterVehicle.Services {
             //}
 
         }
-        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type) {
+        public List<Cor> CarregaComboBoxCor() {
+            List<Cor> returnColor = MyDb.cor.ToList();
+            return returnColor;
+        }
+
+        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor? cor) {
 
             if (string.IsNullOrEmpty(idTx)) {
 
@@ -46,15 +52,16 @@ namespace RegisterVehicle.Services {
 
             Vehicle veiculoRetornado = MyDb.Vehicle.FirstOrDefault(f => f.id == id);
 
-            if (veiculoRetornado != null) { 
-            
-            veiculoRetornado.model = model;
-            veiculoRetornado.brand = brand;
-            veiculoRetornado.year = year;
-            veiculoRetornado.type = type;
-            //veiculoRetornado.type = type;
-            //Roda o SQL no banco
-            MyDb.SaveChanges();
+            if (veiculoRetornado != null) {
+
+                veiculoRetornado.model = model;
+                veiculoRetornado.brand = brand;
+                veiculoRetornado.year = year;
+                veiculoRetornado.type = type;
+                veiculoRetornado.cor = cor;
+                //veiculoRetornado.type = type;
+                //Roda o SQL no banco
+                MyDb.SaveChanges();
             }
         }
         public List<Vehicle> ListVehicle() {

@@ -42,8 +42,9 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboCor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cCor = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // listView1
@@ -53,12 +54,13 @@
             this.cBrand,
             this.cYear,
             this.cId,
-            this.cType});
+            this.cType,
+            this.cCor});
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(223, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(356, 278);
+            this.listView1.Size = new System.Drawing.Size(419, 278);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -107,7 +109,6 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(100, 23);
             this.txtModel.TabIndex = 2;
-            
             // 
             // txtBrand
             // 
@@ -115,7 +116,6 @@
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(100, 23);
             this.txtBrand.TabIndex = 2;
-            
             // 
             // txtYear
             // 
@@ -123,7 +123,6 @@
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(100, 23);
             this.txtYear.TabIndex = 2;
-           
             // 
             // comboCarType
             // 
@@ -146,7 +145,6 @@
             this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "Model";
-            
             // 
             // label2
             // 
@@ -156,7 +154,6 @@
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Brand";
-            
             // 
             // label3
             // 
@@ -166,7 +163,6 @@
             this.label3.Size = new System.Drawing.Size(29, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Year";
-            
             // 
             // label5
             // 
@@ -176,7 +172,6 @@
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "Car Type";
-            
             // 
             // button1
             // 
@@ -216,14 +211,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox1
+            // comboCor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 23);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.comboCor.FormattingEnabled = true;
+            this.comboCor.Location = new System.Drawing.Point(12, 156);
+            this.comboCor.Name = "comboCor";
+            this.comboCor.Size = new System.Drawing.Size(100, 23);
+            this.comboCor.TabIndex = 9;
+            this.comboCor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label6
             // 
@@ -234,13 +229,18 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Cor";
             // 
+            // cCor
+            // 
+            this.cCor.Name = "cCor";
+            this.cCor.Text = "Cor";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 450);
+            this.ClientSize = new System.Drawing.Size(721, 450);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboCor);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtId);
@@ -286,8 +286,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ColumnHeader cType;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboCor;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader cCor;
     }
 }
 

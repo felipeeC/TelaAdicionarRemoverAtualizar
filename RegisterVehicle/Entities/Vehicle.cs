@@ -15,6 +15,8 @@ namespace RegisterVehicle.Entities {
         public string brand { get; set; }
         public string year { get; set; }
         public EnumType? type { get; set; }
+        public Cor cor { get; set; }
+
 
     }
 }

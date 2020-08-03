@@ -21,13 +21,16 @@ namespace RegisterVehicle {
 
         public Form1() {
             InitializeComponent();
-            
+
             //limpa combo e insere os do tipo enum
             comboCarType.Items.Clear();
             comboCarType.Items.Add(EnumType.Car);
             comboCarType.Items.Add(EnumType.Coupe);
             comboCarType.Items.Add(EnumType.Pickup);
+            foreach (var cor in vehicleService.CarregaComboBoxCor()) {
+                comboCor.Items.Add(cor);
 
+            }
             PopulaListView();
 
         }
@@ -47,7 +50,7 @@ namespace RegisterVehicle {
                 MessageBox.Show("Nenhum valor preenchido");
             }
             else {
-                vehicleService.NewVehicle(txtModel.Text, txtBrand.Text, txtYear.Text,(EnumType?)comboCarType.SelectedItem);
+                vehicleService.NewVehicle(txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?)comboCarType.SelectedItem, (Cor?)comboCor.SelectedItem);
                 txtModel.Text = "";
                 txtBrand.Text = "";
                 txtYear.Text = "";
@@ -57,16 +60,20 @@ namespace RegisterVehicle {
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
 
-            if (listView1.SelectedItems.Count == 1 ) {
+            if (listView1.SelectedItems.Count == 1) {
 
                 ListViewItem listViewItem = listView1.SelectedItems[0];
                 txtId.Text = listViewItem.SubItems[3].Text;
                 txtModel.Text = listViewItem.SubItems[0].Text;
                 txtBrand.Text = listViewItem.SubItems[1].Text;
                 txtYear.Text = listViewItem.SubItems[2].Text;
-                if( !string.IsNullOrEmpty(listViewItem.SubItems[4].Text)) { 
-                comboCarType.SelectedItem = Enum.Parse(typeof(EnumType), listViewItem.SubItems[4].Text);
+                if (!string.IsNullOrEmpty(listViewItem.SubItems[4].Text)) {
+                    comboCarType.SelectedItem = Enum.Parse(typeof(EnumType), listViewItem.SubItems[4].Text);
                 }
+                if (!string.IsNullOrEmpty(listViewItem.SubItems[5].Text)) {
+                    comboCor.SelectedItem = (listViewItem.SubItems[5].Text);
+                }
+
             }
         }
 
@@ -82,6 +89,9 @@ namespace RegisterVehicle {
                 listViewItem.SubItems.Add(vehicle.year);
                 listViewItem.SubItems.Add(vehicle.id.ToString());
                 listViewItem.SubItems.Add(vehicle.type.ToString());
+                
+               
+                listViewItem.SubItems.Add(vehicle.cor?.ToString());
             }
         }
 
@@ -111,7 +121,7 @@ namespace RegisterVehicle {
 
         private void button2_Click(object sender, EventArgs e) {
 
-            vehicleService.EditVehicle(txtId.Text, txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?) comboCarType.SelectedItem);
+            vehicleService.EditVehicle(txtId.Text, txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?)comboCarType.SelectedItem, (Cor?)comboCor.SelectedItem);
             PopulaListView();
         }
 
