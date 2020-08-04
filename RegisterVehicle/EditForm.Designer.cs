@@ -23,28 +23,28 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textModel = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBrand = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textYear = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCarType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textId
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(12, 12);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 23);
+            this.textId.TabIndex = 6;
             // 
             // label1
             // 
@@ -55,12 +55,12 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Id";
             // 
-            // textBox2
+            // textModel
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 2;
+            this.textModel.Location = new System.Drawing.Point(12, 41);
+            this.textModel.Name = "textModel";
+            this.textModel.Size = new System.Drawing.Size(100, 23);
+            this.textModel.TabIndex = 2;
             // 
             // label2
             // 
@@ -71,12 +71,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Model";
             // 
-            // textBox3
+            // textBrand
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 2;
+            this.textBrand.Location = new System.Drawing.Point(12, 70);
+            this.textBrand.Name = "textBrand";
+            this.textBrand.Size = new System.Drawing.Size(100, 23);
+            this.textBrand.TabIndex = 2;
             // 
             // label3
             // 
@@ -87,12 +87,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Brand";
             // 
-            // textBox4
+            // textYear
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 99);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 2;
+            this.textYear.Location = new System.Drawing.Point(12, 99);
+            this.textYear.Name = "textYear";
+            this.textYear.Size = new System.Drawing.Size(100, 23);
+            this.textYear.TabIndex = 2;
             // 
             // label4
             // 
@@ -103,18 +103,17 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Year";
             // 
-            // comboBox1
+            // cbCarType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCarType.FormattingEnabled = true;
+            this.cbCarType.Items.AddRange(new object[] {
             "Pickup",
             "Coupe",
             "Car"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 23);
-            this.comboBox1.TabIndex = 3;
-            
+            this.cbCarType.Location = new System.Drawing.Point(12, 128);
+            this.cbCarType.Name = "cbCarType";
+            this.cbCarType.Size = new System.Drawing.Size(100, 23);
+            this.cbCarType.TabIndex = 3;
             // 
             // label5
             // 
@@ -125,14 +124,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Car Type";
             // 
-            // comboBox2
+            // cbCor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 161);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 23);
-            this.comboBox2.TabIndex = 9;
-            
+            this.cbCor.FormattingEnabled = true;
+            this.cbCor.Location = new System.Drawing.Point(12, 161);
+            this.cbCor.Name = "cbCor";
+            this.cbCor.Size = new System.Drawing.Size(100, 23);
+            this.cbCor.TabIndex = 9;
             // 
             // label6
             // 
@@ -143,21 +141,32 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Cor";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EditForm
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbCor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbCarType);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textYear);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBrand);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textModel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textId);
             this.Name = "EditForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,17 +175,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textModel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBrand;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textYear;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCarType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }

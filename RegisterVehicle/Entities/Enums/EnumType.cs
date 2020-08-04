@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace RegisterVehicle.Entities.Enums {
-    enum EnumType {
+    public enum EnumType {
 
         Pickup,
         Coupe,

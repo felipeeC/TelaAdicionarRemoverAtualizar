@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 
 namespace RegisterVehicle.Services {
-    class VehicleService {
+    public class VehicleService {
 
         MyDBContext MyDb = new MyDBContext();
 
-        public void NewVehicle(string model, string brand, string year, EnumType? type, Cor? cor) {
+        public void NewVehicle(string model, string brand, string year, EnumType? type, Cor cor) {
             Vehicle vehicle = new Vehicle();
             vehicle.model = model;
             vehicle.brand = brand;
@@ -47,13 +47,12 @@ namespace RegisterVehicle.Services {
             return returnColor;
         }
 
-        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor? cor) {
+        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor cor) {
 
             if (string.IsNullOrEmpty(idTx)) {
 
                 return;
             }
-
             int id = int.Parse(idTx);
 
             Vehicle veiculoRetornado = LoadById(id);

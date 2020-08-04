@@ -32,13 +32,18 @@ namespace RegisterVehicle {
 
             }
             PopulaListView();
-
         }
 
         //cria uma instancia da classe vehicleService para poder chamar os métodos que estão na classe Vehicle service
         VehicleService vehicleService = new VehicleService();
 
-
+        
+        
+        //passa veiculo para a classe editForm
+        private VehicleService PassaVehicle() {
+            VehicleService veiculo = vehicleService;
+            return veiculo;
+        }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -48,16 +53,17 @@ namespace RegisterVehicle {
         private void buttonAdd_Click(object sender, EventArgs e) {
             EditForm telanova = new EditForm();
             telanova.ShowDialog();
-            if (string.IsNullOrEmpty(txtModel.Text)) {
-                MessageBox.Show("Nenhum valor preenchido");
-            }
-            else {
-                vehicleService.NewVehicle(txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?)comboCarType.SelectedItem, (Cor?)comboCor.SelectedItem);
-                txtModel.Text = "";
-                txtBrand.Text = "";
-                txtYear.Text = "";
-                PopulaListView();
-            }
+            PopulaListView();
+            //if (string.IsNullOrEmpty(txtModel.Text)) {
+            //    MessageBox.Show("Nenhum valor preenchido");
+            //}
+            //else {
+            //    vehicleService.NewVehicle(txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?)comboCarType.SelectedItem, (Cor?)comboCor.SelectedItem);
+            //    txtModel.Text = "";
+            //    txtBrand.Text = "";
+            //    txtYear.Text = "";
+            //    PopulaListView();
+            //}
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -75,7 +81,6 @@ namespace RegisterVehicle {
                 if (!string.IsNullOrEmpty(listViewItem.SubItems[5].Text)) {
                     comboCor.SelectedItem = (listViewItem.SubItems[5].Text);
                 }
-
             }
         }
 
@@ -120,16 +125,35 @@ namespace RegisterVehicle {
 
         }
 
+
         private void textBox1_TextChanged_1(object sender, EventArgs e) {
 
         }
 
         private void button2_Click(object sender, EventArgs e) {
+            int id = ReturnIdItemSelected();
 
-            vehicleService.EditVehicle(txtId.Text, txtModel.Text, txtBrand.Text, txtYear.Text, (EnumType?)comboCarType.SelectedItem, (Cor?)comboCor.SelectedItem);
-            PopulaListView();
+            EditForm telanova = new EditForm();
+            telanova.InitializeForm(vehicleService);
+            if (telanova.loadById(id)) {
+                telanova.ShowDialog();
+                PopulaListView();
+            }
+            else {
+                MessageBox.Show("Nenhum item selecionado");
+            }
+
+
         }
+        public int ReturnIdItemSelected() {
+            int id = 0;
+            if (listView1.SelectedItems.Count == 1) {
+                ListViewItem listViewItem = listView1.SelectedItems[0];
+                id = int.Parse(listViewItem.SubItems[3].Text);
+            }
+            return id;
 
+        }
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e) {
 
         }

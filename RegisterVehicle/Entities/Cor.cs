@@ -6,7 +6,7 @@ using System.Text;
 namespace RegisterVehicle.Entities {
 
     [Table("cor")]
-    class Cor {
+    public class Cor {
 
         public int id { get; set; }
         public string cor { get; set; }

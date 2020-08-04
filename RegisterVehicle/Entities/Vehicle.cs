@@ -7,7 +7,7 @@ using RegisterVehicle.Entities.Enums;
 namespace RegisterVehicle.Entities {
 
     [Table("vehicle")]
-    class Vehicle {
+    public class Vehicle {
 
 
         public int id { get; set; }
