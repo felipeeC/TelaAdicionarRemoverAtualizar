@@ -13,6 +13,14 @@ namespace RegisterVehicle.Entities {
         public override string ToString() {
             return cor;
         }
+        public override bool Equals(object obj) {
+            switch (obj) {
+                case Cor c:
+                    return id == c.id;
+                default: return false;
+            }
+            
+        }
     }
 
 

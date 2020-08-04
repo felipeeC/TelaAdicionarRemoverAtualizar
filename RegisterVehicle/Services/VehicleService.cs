@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 
 namespace RegisterVehicle.Services {
-    public class VehicleService {
+    public class VehicleService : IDisposable {
 
-        MyDBContext MyDb = new MyDBContext();
+        MyDBContext MyDb = Db.Context;
+        private bool disposedValue;
 
         public void NewVehicle(string model, string brand, string year, EnumType? type, Cor cor) {
             Vehicle vehicle = new Vehicle();
@@ -17,6 +18,7 @@ namespace RegisterVehicle.Services {
             vehicle.brand = brand;
             vehicle.year = year;
             vehicle.type = type;
+            MyDb.Attach(cor);
             vehicle.cor = cor;
             MyDb.Vehicle.Add(vehicle);
             //Roda o SQL no banco
@@ -79,6 +81,29 @@ namespace RegisterVehicle.Services {
 
             MyDb.Vehicle.Remove(veiculoRetornado);
             MyDb.SaveChanges();
+        }
+      /// <summary>
+      /// Método que descarta da memória, libera os recursos.
+      /// </summary>
+      /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing) {
+            if (!disposedValue) {
+                if (disposing) {
+                   // MyDb.Dispose(); agora a conexão como banco é permanente, uma conexão para toda a aplicação
+                    
+                }
+
+              
+                disposedValue = true;
+            }
+        }
+
+        
+
+        public void Dispose() {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }

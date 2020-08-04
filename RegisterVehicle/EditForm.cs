@@ -12,30 +12,36 @@ using System.Windows.Forms;
 
 namespace RegisterVehicle {
     public partial class EditForm : Form {
-        
-        VehicleService vehicleService;
-        
+
+
+
         private bool podeIniciar;
 
         public EditForm() {
 
-            InitializeComponent();            
+            InitializeComponent();
         }
         //recebe o veiculo da classe mainform e inicializa o form
-        public void InitializeForm(VehicleService vehicle) {
-            vehicleService = vehicle;
+        public void InitializeForm() {
+            using VehicleService vehicleService = new VehicleService();
             cbCarType.Items.Clear();
             cbCarType.Items.Add(EnumType.Car);
             cbCarType.Items.Add(EnumType.Coupe);
             cbCarType.Items.Add(EnumType.Pickup);
+
             foreach (var cor in vehicleService.CarregaComboBoxCor()) {
                 cbCor.Items.Add(cor);
             }
         }
+
+
+
         //Método para carregar os dados do banco por ID
         public bool loadById(int id) {
-            
+
+            using VehicleService vehicleService = new VehicleService();
             Vehicle vehicle = vehicleService.LoadById(id);
+
             if (vehicle == null) {
 
                 return false;
@@ -51,9 +57,10 @@ namespace RegisterVehicle {
             }
         }
 
-        //Botão Save
+
+        //Botão hibrido, caso esteja vazio o ID, irá fazer um new vehicle, caso exista algum id, irá editar
         private void button1_Click(object sender, EventArgs e) {
-            
+            using VehicleService vehicleService = new VehicleService();
             if (string.IsNullOrEmpty(textModel.Text)) {
 
                 MessageBox.Show("Nenhum valor preenchido");
@@ -74,8 +81,8 @@ namespace RegisterVehicle {
 
 
 
-    
-        
+
+
 
 
 

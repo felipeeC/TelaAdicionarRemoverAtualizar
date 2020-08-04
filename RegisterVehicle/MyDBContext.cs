@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace RegisterVehicle {
-    class MyDBContext : DbContext {
+    public class MyDBContext : DbContext {
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Cor>cor { get; set; }
 
