@@ -1,5 +1,4 @@
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\bin\Debug\netcoreapp3.1\RegisterVehicle.exe
-C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.Form1.resources
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.csproj.GenerateResource.cache
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.AssemblyInfoInputs.cache
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.AssemblyInfo.cs
@@ -34,3 +33,5 @@ C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\Re
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.pdb
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.genruntimeconfig.cache
 C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.csprojAssemblyReference.cache
+C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.EditForm.resources
+C:\PROJETOS\DotNet\TesteComunicacaoDB\RegisterVehicle\obj\Debug\netcoreapp3.1\RegisterVehicle.MainForm.resources

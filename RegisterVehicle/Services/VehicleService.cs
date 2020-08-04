@@ -36,6 +36,12 @@ namespace RegisterVehicle.Services {
             //}
 
         }
+
+        internal Vehicle LoadById(int id) {
+            Vehicle veiculoRetornado = MyDb.Vehicle.FirstOrDefault(f => f.id == id);
+            return veiculoRetornado;
+        }
+
         public List<Cor> CarregaComboBoxCor() {
             List<Cor> returnColor = MyDb.cor.ToList();
             return returnColor;
@@ -50,7 +56,7 @@ namespace RegisterVehicle.Services {
 
             int id = int.Parse(idTx);
 
-            Vehicle veiculoRetornado = MyDb.Vehicle.FirstOrDefault(f => f.id == id);
+            Vehicle veiculoRetornado = LoadById(id);
 
             if (veiculoRetornado != null) {
 
@@ -70,7 +76,7 @@ namespace RegisterVehicle.Services {
         }
 
         public void DeleteVehicle(int id) {
-            Vehicle veiculoRetornado = MyDb.Vehicle.First(f => f.id == id);
+            Vehicle veiculoRetornado = LoadById(id);
 
             MyDb.Vehicle.Remove(veiculoRetornado);
             MyDb.SaveChanges();

@@ -1,5 +1,5 @@
 ﻿namespace RegisterVehicle {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -29,22 +29,23 @@
             this.cYear = new System.Windows.Forms.ColumnHeader();
             this.cId = new System.Windows.Forms.ColumnHeader();
             this.cType = new System.Windows.Forms.ColumnHeader();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.txtBrand = new System.Windows.Forms.TextBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.comboCarType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboCor = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cCor = new System.Windows.Forms.ColumnHeader();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboCor = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboCarType = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -93,6 +94,11 @@
             this.cType.Name = "cType";
             this.cType.Text = "Type";
             // 
+            // cCor
+            // 
+            this.cCor.Name = "cCor";
+            this.cCor.Text = "Cor";
+            // 
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(12, 415);
@@ -103,26 +109,53 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // txtModel
+            // button1
             // 
-            this.txtModel.Location = new System.Drawing.Point(12, 36);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(100, 23);
-            this.txtModel.TabIndex = 2;
+            this.button1.Location = new System.Drawing.Point(102, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
-            // txtBrand
+            // button2
             // 
-            this.txtBrand.Location = new System.Drawing.Point(12, 65);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(100, 23);
-            this.txtBrand.TabIndex = 2;
+            this.button2.Location = new System.Drawing.Point(189, 415);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Save Changes";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtYear
+            // button3
             // 
-            this.txtYear.Location = new System.Drawing.Point(12, 94);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 23);
-            this.txtYear.TabIndex = 2;
+            this.button3.Location = new System.Drawing.Point(567, 415);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Reload";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboCor
+            // 
+            this.comboCor.FormattingEnabled = true;
+            this.comboCor.Location = new System.Drawing.Point(12, 156);
+            this.comboCor.Name = "comboCor";
+            this.comboCor.Size = new System.Drawing.Size(100, 23);
+            this.comboCor.TabIndex = 9;
+            this.comboCor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(118, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Car Type";
             // 
             // comboCarType
             // 
@@ -137,14 +170,21 @@
             this.comboCarType.TabIndex = 3;
             this.comboCarType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Model";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(118, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Year";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(12, 94);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(100, 23);
+            this.txtYear.TabIndex = 2;
             // 
             // label2
             // 
@@ -155,42 +195,28 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Brand";
             // 
-            // label3
+            // txtBrand
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Year";
+            this.txtBrand.Location = new System.Drawing.Point(12, 65);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(100, 23);
+            this.txtBrand.TabIndex = 2;
             // 
-            // label5
+            // label1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Car Type";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(118, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Model";
             // 
-            // button1
+            // txtModel
             // 
-            this.button1.Location = new System.Drawing.Point(102, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonRemove_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(12, 7);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 23);
-            this.txtId.TabIndex = 6;
-            this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.txtModel.Location = new System.Drawing.Point(12, 36);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(100, 23);
+            this.txtModel.TabIndex = 2;
             // 
             // label4
             // 
@@ -201,25 +227,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Id";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(189, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Save Changes";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // comboCor
-            // 
-            this.comboCor.FormattingEnabled = true;
-            this.comboCor.Location = new System.Drawing.Point(12, 156);
-            this.comboCor.Name = "comboCor";
-            this.comboCor.Size = new System.Drawing.Size(100, 23);
-            this.comboCor.TabIndex = 9;
-            this.comboCor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -229,16 +236,22 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Cor";
             // 
-            // cCor
+            // txtId
             // 
-            this.cCor.Name = "cCor";
-            this.cCor.Text = "Cor";
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(12, 7);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 23);
+            this.txtId.TabIndex = 6;
+            this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(652, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboCor);
             this.Controls.Add(this.button2);
@@ -270,25 +283,26 @@
         private System.Windows.Forms.ColumnHeader Year;
         private System.Windows.Forms.ColumnHeader cModel;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.TextBox txtModel;
-        private System.Windows.Forms.TextBox txtBrand;
-        private System.Windows.Forms.TextBox txtYear;
-        private System.Windows.Forms.ComboBox comboCarType;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ColumnHeader cBrand;
         private System.Windows.Forms.ColumnHeader cYear;
         private System.Windows.Forms.ColumnHeader cId;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ColumnHeader cType;
-        private System.Windows.Forms.ComboBox comboCor;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ColumnHeader cCor;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboCor;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboCarType;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 

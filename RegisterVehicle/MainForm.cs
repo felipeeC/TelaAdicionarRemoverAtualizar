@@ -14,12 +14,12 @@ using RegisterVehicle.Entities.Enums;
 using RegisterVehicle.Services;
 
 namespace RegisterVehicle {
-    public partial class Form1 : Form {
+    public partial class MainForm : Form {
 
 
 
 
-        public Form1() {
+        public MainForm() {
             InitializeComponent();
 
             //limpa combo e insere os do tipo enum
@@ -46,6 +46,8 @@ namespace RegisterVehicle {
         }
 
         private void buttonAdd_Click(object sender, EventArgs e) {
+            EditForm telanova = new EditForm();
+            telanova.ShowDialog();
             if (string.IsNullOrEmpty(txtModel.Text)) {
                 MessageBox.Show("Nenhum valor preenchido");
             }
@@ -89,9 +91,12 @@ namespace RegisterVehicle {
                 listViewItem.SubItems.Add(vehicle.year);
                 listViewItem.SubItems.Add(vehicle.id.ToString());
                 listViewItem.SubItems.Add(vehicle.type.ToString());
-                
-               
+
+
                 listViewItem.SubItems.Add(vehicle.cor?.ToString());
+                txtModel.Text = "";
+                txtBrand.Text = "";
+                txtYear.Text = "";
             }
         }
 
@@ -127,6 +132,10 @@ namespace RegisterVehicle {
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e) {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            PopulaListView();
         }
     }
 }
