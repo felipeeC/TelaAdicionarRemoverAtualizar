@@ -34,6 +34,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -52,11 +54,11 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(630, 278);
+            this.listView1.Size = new System.Drawing.Size(419, 278);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-          
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // cModel
             // 
@@ -130,12 +132,36 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(437, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(205, 105);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(563, 123);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(77, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "To Json";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(652, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -163,6 +189,8 @@
         private System.Windows.Forms.ColumnHeader cType;
         private System.Windows.Forms.ColumnHeader cCor;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

@@ -6,13 +6,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RegisterVehicle.Services {
-    public class VehicleService : IDisposable {
+namespace RegisterVehicle.Services
+{
+    public class VehicleService : IDisposable
+    {
 
         MyDBContext MyDb = Db.Context;
         private bool disposedValue;
 
-        public void NewVehicle(string model, string brand, string year, EnumType? type, Cor cor) {
+
+
+
+        /// <summary>
+        /// Método para inserir um novo veículo no banco
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="brand"></param>
+        /// <param name="year"></param>
+        /// <param name="type"></param>
+        /// <param name="cor"></param>
+        public void NewVehicle(string model, string brand, string year, EnumType? type, Cor cor)
+        {
             Vehicle vehicle = new Vehicle();
             vehicle.model = model;
             vehicle.brand = brand;
@@ -39,19 +53,49 @@ namespace RegisterVehicle.Services {
 
         }
 
-        internal Vehicle LoadById(int id) {
+        
+        /// <summary>
+        /// Método carrega Veículo via id no banco
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        internal Vehicle LoadById(int id)
+        {
             Vehicle veiculoRetornado = MyDb.Vehicle.FirstOrDefault(f => f.id == id);
             return veiculoRetornado;
         }
 
-        public List<Cor> CarregaComboBoxCor() {
+
+        /// <summary>
+        /// Método carrega combo box de Cor
+        /// </summary>
+        /// <returns></returns>
+        public List<Cor> CarregaComboBoxCor()
+        {
             List<Cor> returnColor = MyDb.cor.ToList();
             return returnColor;
         }
 
-        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor cor) {
 
-            if (string.IsNullOrEmpty(idTx)) {
+
+
+
+
+
+        /// <summary>
+        /// Método Edita a o vehicle
+        /// </summary>
+        /// <param name="idTx"></param>
+        /// <param name="model"></param>
+        /// <param name="brand"></param>
+        /// <param name="year"></param>
+        /// <param name="type"></param>
+        /// <param name="cor"></param>
+        public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor cor)
+        {
+
+            if (string.IsNullOrEmpty(idTx))
+            {
 
                 return;
             }
@@ -59,7 +103,8 @@ namespace RegisterVehicle.Services {
 
             Vehicle veiculoRetornado = LoadById(id);
 
-            if (veiculoRetornado != null) {
+            if (veiculoRetornado != null)
+            {
 
                 veiculoRetornado.model = model;
                 veiculoRetornado.brand = brand;
@@ -71,36 +116,68 @@ namespace RegisterVehicle.Services {
                 MyDb.SaveChanges();
             }
         }
-        public List<Vehicle> ListVehicle() {
+
+
+
+        /// <summary>
+        /// Método carrega lista de veículos
+        /// </summary>
+        /// <returns></returns>
+        public List<Vehicle> ListVehicle()
+        {
             List<Vehicle> vehicleList = MyDb.Vehicle.ToList();
             return vehicleList;
         }
 
-        public void DeleteVehicle(int id) {
+
+
+
+        /// <summary>
+        /// Método deleta veículo
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteVehicle(int id)
+        {
             Vehicle veiculoRetornado = LoadById(id);
 
             MyDb.Vehicle.Remove(veiculoRetornado);
             MyDb.SaveChanges();
         }
-      /// <summary>
-      /// Método que descarta da memória, libera os recursos.
-      /// </summary>
-      /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing) {
-            if (!disposedValue) {
-                if (disposing) {
-                   // MyDb.Dispose(); agora a conexão como banco é permanente, uma conexão para toda a aplicação
-                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Método que descarta da memória, libera os recursos.
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // MyDb.Dispose(); agora a conexão como banco é permanente, uma conexão para toda a aplicação
+
                 }
 
-              
+
                 disposedValue = true;
             }
         }
 
-        
-
-        public void Dispose() {
+        public void Dispose()
+        {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
