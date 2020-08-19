@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using RegisterVehicle.Entities;
 using RegisterVehicle.Entities.Enums;
 using System;
@@ -13,7 +14,7 @@ namespace RegisterVehicle.Services
 
         MyDBContext MyDb = Db.Context;
         private bool disposedValue;
-
+    
 
 
 
@@ -32,7 +33,7 @@ namespace RegisterVehicle.Services
             vehicle.brand = brand;
             vehicle.year = year;
             vehicle.type = type;
-            
+
 
             MyDb.Attach(cor);
             vehicle.cor = cor;
@@ -55,7 +56,7 @@ namespace RegisterVehicle.Services
 
         }
 
-        
+
         /// <summary>
         /// Método carrega Veículo via id no banco
         /// </summary>
@@ -114,7 +115,7 @@ namespace RegisterVehicle.Services
                 veiculoRetornado.year = year;
                 veiculoRetornado.type = type;
                 veiculoRetornado.cor = cor;
-                //veiculoRetornado.pessoa = pessoa;
+                
                 //veiculoRetornado.type = type;
                 //Roda o SQL no banco
                 MyDb.SaveChanges();
@@ -129,10 +130,31 @@ namespace RegisterVehicle.Services
         /// <returns></returns>
         public List<Vehicle> ListVehicle()
         {
-            List<Vehicle> vehicleList = MyDb.Vehicle.ToList();
+            List<Vehicle> vehicleList = MyDb.Vehicle.Include(v => v.cor).ToList();
+
+
             return vehicleList;
         }
 
+        public List<Pessoa> ListPessoas(int vehicleId)
+        {
+            
+
+            var List = MyDb.vehiclePessoa
+                .Include(p=> p.pessoa)
+                .Where(p => p.VehicleId == vehicleId).ToList();
+
+
+            //criar chamada na tabela vehicle_pessoa, fazendo um join(include)  entre pessoaId e vehicleID  fazendo um link com vehicle
+            List<Pessoa> pessoaList = new List<Pessoa>();
+            foreach (var pessoaReturned in List) {
+
+                pessoaList.Add(pessoaReturned.pessoa);
+                
+            }
+
+            return pessoaList;
+        }
 
 
 

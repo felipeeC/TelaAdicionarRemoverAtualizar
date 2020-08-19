@@ -27,6 +27,7 @@ namespace RegisterVehicle
         {
             InitializeComponent();
             PopulaListView();
+            
         }
 
         //passa veiculo para a classe editForm para ter somente 1 acesso ao banco, não causa conflito de dados
@@ -76,7 +77,7 @@ namespace RegisterVehicle
             //limpa os itens da listview antes de adicionar novamente, para não ocasionar congelamento de dados
             listView1.Items.Clear();
             //utilizando a instancia vehicleService para chamar o metodo listVehicle
-            List<Vehicle> listaRecebida = vehicleService.ListVehicle();
+            List<Vehicle> listaRecebida = vehicleService. ListVehicle();
             foreach (Vehicle vehicle in listaRecebida)
             {
                 ListViewItem listViewItem = listView1.Items.Add(vehicle.model);
@@ -85,8 +86,7 @@ namespace RegisterVehicle
                 listViewItem.SubItems.Add(vehicle.year);
                 listViewItem.SubItems.Add(vehicle.id.ToString());
                 listViewItem.SubItems.Add(vehicle.type.ToString());
-                listViewItem.SubItems.Add(vehicle.cor?.ToString());
-                listViewItem.SubItems.Add(vehicle.pessoaid.ToString());
+                listViewItem.SubItems.Add(vehicle.cor?.ToString());                
             }
         }
 

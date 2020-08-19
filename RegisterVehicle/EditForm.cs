@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -53,6 +54,12 @@ namespace RegisterVehicle {
                 textBrand.Text = vehicle.brand;
                 cbCarType.SelectedItem = vehicle.type;
                 cbCor.SelectedItem = vehicle.cor;
+                List<Pessoa> pessoaRecebida =vehicleService.ListPessoas(vehicle.id).ToList();
+                foreach(var pessoaLista in pessoaRecebida)
+                {
+                    ListViewItem listViewItem = listViewPessoa.Items.Add(pessoaLista.nome);
+                }
+
                 return true;
             }
         }
@@ -75,7 +82,6 @@ namespace RegisterVehicle {
                 textModel.Text = "";
                 textBrand.Text = "";
                 textYear.Text = "";
-                textPessoa.Text = "";
                 Close();
             }
         }
@@ -117,6 +123,11 @@ namespace RegisterVehicle {
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

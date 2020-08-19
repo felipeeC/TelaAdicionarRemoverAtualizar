@@ -10,6 +10,7 @@ namespace RegisterVehicle {
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Cor>cor { get; set; }
         public DbSet<Pessoa> pessoa { get; set; }
+        public DbSet<VehiclePessoa>vehiclePessoa { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 

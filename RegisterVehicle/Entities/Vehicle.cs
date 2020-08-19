@@ -16,8 +16,7 @@ namespace RegisterVehicle.Entities {
         public string year { get; set; }
         public EnumType? type { get; set; }
         public Cor cor { get; set; }
-        public Pessoa pessoa { get; set; }
-        public int pessoaid { get; set; }
+        //public Pessoa pessoa { get; set; }
 
     }
 }

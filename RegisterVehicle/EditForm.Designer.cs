@@ -36,8 +36,9 @@
             this.cbCor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textPessoa = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.listViewPessoa = new System.Windows.Forms.ListView();
+            this.cPessoa = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // textId
@@ -145,7 +146,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 226);
+            this.button1.Location = new System.Drawing.Point(243, 232);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -153,28 +154,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textPessoa
-            // 
-            this.textPessoa.Location = new System.Drawing.Point(13, 190);
-            this.textPessoa.Name = "textPessoa";
-            this.textPessoa.Size = new System.Drawing.Size(98, 23);
-            this.textPessoa.TabIndex = 11;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(118, 193);
+            this.label7.Location = new System.Drawing.Point(218, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 15);
             this.label7.TabIndex = 12;
             this.label7.Text = "Pessoa";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // listViewPessoa
+            // 
+            this.listViewPessoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cPessoa});
+            this.listViewPessoa.HideSelection = false;
+            this.listViewPessoa.Location = new System.Drawing.Point(218, 33);
+            this.listViewPessoa.Name = "listViewPessoa";
+            this.listViewPessoa.Size = new System.Drawing.Size(100, 146);
+            this.listViewPessoa.TabIndex = 13;
+            this.listViewPessoa.UseCompatibleStateImageBehavior = false;
+            this.listViewPessoa.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // cPessoa
+            // 
+            this.cPessoa.Text = "Pessoas";
+            // 
             // EditForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(329, 268);
+            this.Controls.Add(this.listViewPessoa);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textPessoa);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCor);
@@ -209,7 +219,8 @@
         private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textPessoa;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListView listViewPessoa;
+        private System.Windows.Forms.ColumnHeader cPessoa;
     }
 }
