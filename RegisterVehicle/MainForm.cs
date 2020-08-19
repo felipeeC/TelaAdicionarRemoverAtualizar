@@ -85,10 +85,8 @@ namespace RegisterVehicle
                 listViewItem.SubItems.Add(vehicle.year);
                 listViewItem.SubItems.Add(vehicle.id.ToString());
                 listViewItem.SubItems.Add(vehicle.type.ToString());
-
-
                 listViewItem.SubItems.Add(vehicle.cor?.ToString());
-
+                listViewItem.SubItems.Add(vehicle.pessoaid.ToString());
             }
         }
 
@@ -110,7 +108,6 @@ namespace RegisterVehicle
                 }
                 PopulaListView();
             }
-
         }
 
         //Evento para editar, pesquisa no banco pelo id e preenche os campos da tela editForm
@@ -155,7 +152,7 @@ namespace RegisterVehicle
                 vehicle.model = listViewItem.SubItems[0].Text;
                 vehicle.brand = listViewItem.SubItems[1].Text;
                 vehicle.year = listViewItem.SubItems[2].Text;
-                
+
             }
             return vehicle;
         }

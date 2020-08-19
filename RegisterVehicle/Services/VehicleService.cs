@@ -32,6 +32,8 @@ namespace RegisterVehicle.Services
             vehicle.brand = brand;
             vehicle.year = year;
             vehicle.type = type;
+            
+
             MyDb.Attach(cor);
             vehicle.cor = cor;
             MyDb.Vehicle.Add(vehicle);
@@ -91,6 +93,7 @@ namespace RegisterVehicle.Services
         /// <param name="year"></param>
         /// <param name="type"></param>
         /// <param name="cor"></param>
+        /// <param name="pessoa"></param>
         public void EditVehicle(string idTx, string model, string brand, string year, EnumType? type, Cor cor)
         {
 
@@ -111,6 +114,7 @@ namespace RegisterVehicle.Services
                 veiculoRetornado.year = year;
                 veiculoRetornado.type = type;
                 veiculoRetornado.cor = cor;
+                //veiculoRetornado.pessoa = pessoa;
                 //veiculoRetornado.type = type;
                 //Roda o SQL no banco
                 MyDb.SaveChanges();
@@ -143,9 +147,6 @@ namespace RegisterVehicle.Services
             MyDb.Vehicle.Remove(veiculoRetornado);
             MyDb.SaveChanges();
         }
-
-
-
 
 
 

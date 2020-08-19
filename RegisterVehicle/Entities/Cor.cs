@@ -19,7 +19,6 @@ namespace RegisterVehicle.Entities {
                     return id == c.id;
                 default: return false;
             }
-            
         }
     }
 

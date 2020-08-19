@@ -9,7 +9,7 @@ namespace RegisterVehicle {
     public class MyDBContext : DbContext {
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Cor>cor { get; set; }
-
+        public DbSet<Pessoa> pessoa { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 

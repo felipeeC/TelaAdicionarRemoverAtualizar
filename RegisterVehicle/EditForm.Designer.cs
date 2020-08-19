@@ -36,6 +36,8 @@
             this.cbCor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.textPessoa = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textId
@@ -151,9 +153,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textPessoa
+            // 
+            this.textPessoa.Location = new System.Drawing.Point(13, 190);
+            this.textPessoa.Name = "textPessoa";
+            this.textPessoa.Size = new System.Drawing.Size(98, 23);
+            this.textPessoa.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(118, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 15);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Pessoa";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // EditForm
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textPessoa);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCor);
@@ -188,5 +209,7 @@
         private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textPessoa;
+        private System.Windows.Forms.Label label7;
     }
 }

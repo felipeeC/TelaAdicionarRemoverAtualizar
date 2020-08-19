@@ -75,6 +75,7 @@ namespace RegisterVehicle {
                 textModel.Text = "";
                 textBrand.Text = "";
                 textYear.Text = "";
+                textPessoa.Text = "";
                 Close();
             }
         }
@@ -115,7 +116,10 @@ namespace RegisterVehicle {
 
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
 

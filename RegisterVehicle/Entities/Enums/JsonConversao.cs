@@ -39,4 +39,4 @@ namespace RegisterVehicle.Entities.Enums
         //    }
         }
     }
-}
+
