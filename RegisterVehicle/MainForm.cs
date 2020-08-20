@@ -27,7 +27,7 @@ namespace RegisterVehicle
         {
             InitializeComponent();
             PopulaListView();
-            
+
         }
 
         //passa veiculo para a classe editForm para ter somente 1 acesso ao banco, não causa conflito de dados
@@ -77,7 +77,7 @@ namespace RegisterVehicle
             //limpa os itens da listview antes de adicionar novamente, para não ocasionar congelamento de dados
             listView1.Items.Clear();
             //utilizando a instancia vehicleService para chamar o metodo listVehicle
-            List<Vehicle> listaRecebida = vehicleService. ListVehicle();
+            List<Vehicle> listaRecebida = vehicleService.ListVehicle();
             foreach (Vehicle vehicle in listaRecebida)
             {
                 ListViewItem listViewItem = listView1.Items.Add(vehicle.model);
@@ -86,7 +86,7 @@ namespace RegisterVehicle
                 listViewItem.SubItems.Add(vehicle.year);
                 listViewItem.SubItems.Add(vehicle.id.ToString());
                 listViewItem.SubItems.Add(vehicle.type.ToString());
-                listViewItem.SubItems.Add(vehicle.cor?.ToString());                
+                listViewItem.SubItems.Add(vehicle.cor?.ToString());
             }
         }
 
@@ -152,7 +152,7 @@ namespace RegisterVehicle
                 vehicle.model = listViewItem.SubItems[0].Text;
                 vehicle.brand = listViewItem.SubItems[1].Text;
                 vehicle.year = listViewItem.SubItems[2].Text;
-
+                //vehicle.cor = listViewItem.SubItems[5].Text;
             }
             return vehicle;
         }
@@ -163,7 +163,6 @@ namespace RegisterVehicle
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-
             //cria objeto com valores
             Vehicle veiculo = ReturnIdItemSelectedForJson();
             if (veiculo.id == 0)
@@ -176,12 +175,20 @@ namespace RegisterVehicle
                 JsonConversao jsonconv = new JsonConversao();
                 richTextBox1.Text = jsonconv.ConverteObjectParaJSon(veiculo);
             }
-
-
-
         }
 
 
+        /// <summary>
+        /// Botão chamada da tela pessoa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            PessoaForm telaPessoa = new PessoaForm();
+            telaPessoa.InitializeForm();
+            telaPessoa.ShowDialog();
+        }
 
 
         //Botão reaload da list view

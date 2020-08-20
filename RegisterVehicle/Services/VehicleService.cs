@@ -136,6 +136,7 @@ namespace RegisterVehicle.Services
             return vehicleList;
         }
 
+
         public List<Pessoa> ListPessoas(int vehicleId)
         {
             
@@ -155,7 +156,25 @@ namespace RegisterVehicle.Services
 
             return pessoaList;
         }
+        public List<Pessoa> ListTodasPessoas()
+        {
 
+
+            var List = MyDb.pessoa.Where(p=> p.id == p.id).ToList();
+
+            return (List<Pessoa>)List;
+
+        //    criar chamada na tabela vehicle_pessoa, fazendo um join(include)  entre pessoaId e vehicleID  fazendo um link com vehicle
+        //    List<Pessoa> pessoaList = new List<Pessoa>();
+        //    foreach (var pessoaReturned in List)
+        //    {
+
+        //        pessoaList.Add(pessoaReturned.pessoa);
+
+        //    }
+
+        //    return pessoaList;
+        }
 
 
         /// <summary>
