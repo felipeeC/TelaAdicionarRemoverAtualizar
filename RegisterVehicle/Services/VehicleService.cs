@@ -114,9 +114,7 @@ namespace RegisterVehicle.Services
                 veiculoRetornado.brand = brand;
                 veiculoRetornado.year = year;
                 veiculoRetornado.type = type;
-                veiculoRetornado.cor = cor;
-                
-                //veiculoRetornado.type = type;
+                veiculoRetornado.cor = cor;                       
                 //Roda o SQL no banco
                 MyDb.SaveChanges();
             }
@@ -136,7 +134,11 @@ namespace RegisterVehicle.Services
             return vehicleList;
         }
 
-
+        /// <summary>
+        /// faz um join entre vehicle e pessoa, buscando pelo id de vehicle e retornando uma lista de pessoas
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        /// <returns></returns>
         public List<Pessoa> ListPessoas(int vehicleId)
         {
             
@@ -156,6 +158,35 @@ namespace RegisterVehicle.Services
 
             return pessoaList;
         }
+
+        /// <summary>
+        /// Faz um join na tabela pessoa e vehicle buscando pelo id de pessoa e retornando uma lista de vehicle
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        /// <returns></returns>
+        public List<Vehicle> ListVehiclePorPessoa(int pessoaId)
+        {
+            var List = MyDb.vehiclePessoa
+                .Include(p => p.vehicle)
+                .Where(p => p.PessoaId == pessoaId).ToList();
+
+            //criar chamada na tabela vehicle_pessoa, fazendo um join(include)  entre pessoaId e vehicleID  fazendo um link com vehicle
+            List<Vehicle> vehicleList = new List<Vehicle>();
+            foreach (var vehicleReturned in List)
+            {
+                vehicleList.Add(vehicleReturned.vehicle);
+            }
+            return vehicleList;
+        }
+
+
+
+
+
+
+
+
+
         public List<Pessoa> ListTodasPessoas()
         {
 

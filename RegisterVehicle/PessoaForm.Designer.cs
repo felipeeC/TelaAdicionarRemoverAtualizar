@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PessoaForm));
             this.listVPessoa = new System.Windows.Forms.ListView();
+            this.cId = new System.Windows.Forms.ColumnHeader();
             this.cPessoas = new System.Windows.Forms.ColumnHeader();
             this.listVcarros = new System.Windows.Forms.ListView();
+            this.cIdcarro = new System.Windows.Forms.ColumnHeader();
             this.cCarros = new System.Windows.Forms.ColumnHeader();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cId = new System.Windows.Forms.ColumnHeader();
-            this.cIdcarro = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.listVPessoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cId,
             this.cPessoas});
+            this.listVPessoa.FullRowSelect = true;
             this.listVPessoa.HideSelection = false;
             this.listVPessoa.Location = new System.Drawing.Point(12, 12);
             this.listVPessoa.Name = "listVPessoa";
@@ -53,6 +54,10 @@
             this.listVPessoa.UseCompatibleStateImageBehavior = false;
             this.listVPessoa.View = System.Windows.Forms.View.Details;
             this.listVPessoa.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // cId
+            // 
+            this.cId.Text = "Id";
             // 
             // cPessoas
             // 
@@ -72,6 +77,10 @@
             this.listVcarros.UseCompatibleStateImageBehavior = false;
             this.listVcarros.View = System.Windows.Forms.View.Details;
             // 
+            // cIdcarro
+            // 
+            this.cIdcarro.Text = "Id";
+            // 
             // cCarros
             // 
             this.cCarros.Text = "Carros";
@@ -85,6 +94,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "List";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -95,14 +105,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // cId
-            // 
-            this.cId.Text = "Id";
-            // 
-            // cIdcarro
-            // 
-            this.cIdcarro.Text = "Id";
             // 
             // PessoaForm
             // 

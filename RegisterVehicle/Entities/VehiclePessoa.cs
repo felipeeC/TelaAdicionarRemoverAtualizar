@@ -15,6 +15,7 @@ namespace RegisterVehicle.Entities
         [Column("pessoaid")]
         public int PessoaId { get; set; }
 
+        public Vehicle vehicle { get; set; }
         public Pessoa pessoa { get; set; }
     }
 }
