@@ -169,16 +169,18 @@
             this.listViewPessoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cPessoa});
             this.listViewPessoa.HideSelection = false;
-            this.listViewPessoa.Location = new System.Drawing.Point(218, 33);
+            this.listViewPessoa.Location = new System.Drawing.Point(218, 30);
             this.listViewPessoa.Name = "listViewPessoa";
             this.listViewPessoa.Size = new System.Drawing.Size(100, 146);
             this.listViewPessoa.TabIndex = 13;
             this.listViewPessoa.UseCompatibleStateImageBehavior = false;
+            this.listViewPessoa.View = System.Windows.Forms.View.Details;
             this.listViewPessoa.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // cPessoa
             // 
             this.cPessoa.Text = "Pessoas";
+            this.cPessoa.Width = 97;
             // 
             // EditForm
             // 
