@@ -165,75 +165,82 @@ namespace RegisterVehicle
         {
             //cria objeto com valores
             Vehicle veiculo = ReturnIdItemSelectedForJson();
+            using VehicleService vehicleService = new VehicleService();
+
+            var listaDePessoa = vehicleService.ListPessoas(veiculo.id);
+
             if (veiculo.id == 0)
             {
                 richTextBox1.Text = "Nenhum Veículo selecionado";
             }
             else
             {
+
+
                 //converte para string e exibe no textBox em forma
                 JsonConversao jsonconv = new JsonConversao();
-                richTextBox1.Text = jsonconv.ConverteObjectParaJSon(veiculo);
-            }
+                richTextBox1.Text = jsonconv.ConverteObjectParaJSon(veiculo);       
+                richTextBox2.Text = jsonconv.ConverteObjectParaJSon(listaDePessoa);                           
         }
+    }
 
 
-        /// <summary>
-        /// Botão chamada da tela pessoa
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button5_Click(object sender, EventArgs e)
-        {
-            PessoaForm telaPessoa = new PessoaForm();
-            telaPessoa.InitializeForm();
-            telaPessoa.ShowDialog();
-        }
+    /// <summary>
+    /// Botão chamada da tela pessoa
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button5_Click(object sender, EventArgs e)
+    {
+        PessoaForm telaPessoa = new PessoaForm();
+        telaPessoa.InitializeForm();
+        telaPessoa.ShowDialog();
+    }
 
 
-        //Botão reaload da list view
-        private void button3_Click(object sender, EventArgs e)
-        {
-            PopulaListView();
-            richTextBox1.Text = "";
-        }
+    //Botão reaload da list view
+    private void button3_Click(object sender, EventArgs e)
+    {
+        PopulaListView();
+        richTextBox1.Text = "";
+    }
 
 
 
 
-        //====================================================================================
+    //====================================================================================
 
-        //Eventos não utilizados
+    //Eventos não utilizados
 
 
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+    {
 
     }
+
+    private void textBox1_TextChanged_1(object sender, EventArgs e)
+    {
+
+    }
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    private void Form1_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void richTextBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+
+}
 }
