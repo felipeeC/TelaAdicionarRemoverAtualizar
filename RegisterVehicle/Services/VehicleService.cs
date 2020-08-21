@@ -191,7 +191,7 @@ namespace RegisterVehicle.Services
         {
 
 
-            var List = MyDb.pessoa.Where(p=> p.id == p.id).ToList();
+            var List = MyDb.pessoa.ToList();
 
             return (List<Pessoa>)List;
 
