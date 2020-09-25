@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace RegisterVehicle {
@@ -59,7 +60,9 @@ namespace RegisterVehicle {
                 {
                     ListViewItem listViewItem = listViewPessoa.Items.Add(pessoaLista.nome);
                 }
-
+                JsonConversao jsonconv = new JsonConversao();
+                richTextBox1.Text = JsonSerializer.Serialize(vehicle);
+                richTextBox2.Text = JsonSerializer.Serialize(pessoaRecebida);
                 return true;
             }
         }
@@ -76,6 +79,9 @@ namespace RegisterVehicle {
 
                 vehicleService.EditVehicle(textId.Text, textModel.Text, textBrand.Text, textYear.Text, (EnumType?)cbCarType.SelectedItem, (Cor)cbCor.SelectedItem);
                 Close();
+                //converte para string e exibe no textBox em forma
+                
+
             }
             else {
                 vehicleService.NewVehicle(textModel.Text, textBrand.Text, textYear.Text, (EnumType?)cbCarType.SelectedItem, (Cor)cbCor.SelectedItem);
@@ -85,23 +91,6 @@ namespace RegisterVehicle {
                 Close();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

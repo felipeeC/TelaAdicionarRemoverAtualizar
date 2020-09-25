@@ -179,14 +179,6 @@ namespace RegisterVehicle.Services
             return vehicleList;
         }
 
-
-
-
-
-
-
-
-
         public List<Pessoa> ListTodasPessoas()
         {
 
@@ -219,13 +211,6 @@ namespace RegisterVehicle.Services
             MyDb.Vehicle.Remove(veiculoRetornado);
             MyDb.SaveChanges();
         }
-
-
-
-
-
-
-
 
 
 

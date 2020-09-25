@@ -156,33 +156,33 @@ namespace RegisterVehicle
             }
             return vehicle;
         }
-        /// <summary>
-        /// Botão toJson
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //cria objeto com valores
-            Vehicle veiculo = ReturnIdItemSelectedForJson();
-            using VehicleService vehicleService = new VehicleService();
+    //    /// <summary>
+    //    /// Botão toJson
+    //    /// </summary>
+    //    /// <param name="sender"></param>
+    //    /// <param name="e"></param>
+    //    private void button4_Click(object sender, EventArgs e)
+    //    {
+    //        //cria objeto com valores
+    //        Vehicle veiculo = ReturnIdItemSelectedForJson();
+    //        using VehicleService vehicleService = new VehicleService();
 
-            var listaDePessoa = vehicleService.ListPessoas(veiculo.id);
+    //        var listaDePessoa = vehicleService.ListPessoas(veiculo.id);
 
-            if (veiculo.id == 0)
-            {
-                richTextBox1.Text = "Nenhum Veículo selecionado";
-            }
-            else
-            {
+    //        if (veiculo.id == 0)
+    //        {
+    //            richTextBox1.Text = "Nenhum Veículo selecionado";
+    //        }
+    //        else
+    //        {
 
 
-                //converte para string e exibe no textBox em forma
-                JsonConversao jsonconv = new JsonConversao();
-                richTextBox1.Text = jsonconv.ConverteObjectParaJSon(veiculo);       
-                richTextBox2.Text = jsonconv.ConverteObjectParaJSon(listaDePessoa);                           
-        }
-    }
+    //            //converte para string e exibe no textBox em forma
+    //            JsonConversao jsonconv = new JsonConversao();
+    //            richTextBox1.Text = jsonconv.ConverteObjectParaJSon(veiculo);       
+    //            richTextBox2.Text = jsonconv.ConverteObjectParaJSon(listaDePessoa);                           
+    //    }
+    //}
 
 
     /// <summary>
@@ -202,7 +202,7 @@ namespace RegisterVehicle
     private void button3_Click(object sender, EventArgs e)
     {
         PopulaListView();
-        richTextBox1.Text = "";
+       
     }
 
 
@@ -241,6 +241,9 @@ namespace RegisterVehicle
 
     }
 
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
 
-}
+        }
+    }
 }

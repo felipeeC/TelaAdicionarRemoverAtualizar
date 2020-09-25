@@ -36,9 +36,10 @@
             this.cbCor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.listViewPessoa = new System.Windows.Forms.ListView();
             this.cPessoa = new System.Windows.Forms.ColumnHeader();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // textId
@@ -146,32 +147,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(243, 232);
+            this.button1.Location = new System.Drawing.Point(559, 338);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(70, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(218, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Pessoa";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // listViewPessoa
             // 
             this.listViewPessoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cPessoa});
             this.listViewPessoa.HideSelection = false;
-            this.listViewPessoa.Location = new System.Drawing.Point(218, 30);
+            this.listViewPessoa.Location = new System.Drawing.Point(12, 190);
             this.listViewPessoa.Name = "listViewPessoa";
-            this.listViewPessoa.Size = new System.Drawing.Size(100, 146);
+            this.listViewPessoa.Size = new System.Drawing.Size(100, 177);
             this.listViewPessoa.TabIndex = 13;
             this.listViewPessoa.UseCompatibleStateImageBehavior = false;
             this.listViewPessoa.View = System.Windows.Forms.View.Details;
@@ -182,11 +173,28 @@
             this.cPessoa.Text = "Pessoas";
             this.cPessoa.Width = 97;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(218, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(271, 177);
+            this.richTextBox1.TabIndex = 14;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(218, 190);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(271, 177);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
+            // 
             // EditForm
             // 
-            this.ClientSize = new System.Drawing.Size(329, 268);
+            this.ClientSize = new System.Drawing.Size(641, 373);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.listViewPessoa);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCor);
@@ -221,8 +229,9 @@
         private System.Windows.Forms.ComboBox cbCor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListView listViewPessoa;
         private System.Windows.Forms.ColumnHeader cPessoa;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
